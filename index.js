@@ -18,7 +18,7 @@ const config = {
 async function algo() {
     try {
         const packageIdOne = 'BILLS-116hr748eas';
-        const packageIdTwo = 'BILLS-116hr748enr';
+        const packageIdTwo = 'BILLS-116hr748pcs';
         const filePath = config.storage.pdf + packageIdOne + '-' + packageIdOne + '.pdf';
 
         const htmlFilePath = process.cwd() + config.storage.html + packageIdOne + '.html';
@@ -38,8 +38,8 @@ async function algo() {
         // const packageIdTwo = 'BILLS-116hr6322ih-copy';
         // const packageIdOne = 'BILLS-116hr6322rds-copy-modified-2';
 
-        // const difference = jsdiff.diffWords(documentContent, comparedDocumentContent);
-        const difference = jsdiff.diffLines(documentContent, comparedDocumentContent);
+        const difference = jsdiff.diffWords(documentContent, comparedDocumentContent);
+        // const difference = jsdiff.diffLines(documentContent, comparedDocumentContent);
         console.log('finished');
 
 
@@ -208,10 +208,10 @@ async function getDocumentContent(htmlFilePath) {
     return cheerioObj('pre').html();
 }
 
-// algo().then(() => {
-//    console.log('running test algo');
-// });
-
-chunkAlgorithm().then(() => {
-    console.log('running chunkAlgorithm');
+algo().then(() => {
+   console.log('running test algo');
 });
+
+// chunkAlgorithm().then(() => {
+//     console.log('running chunkAlgorithm');
+// });
